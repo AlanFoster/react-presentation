@@ -14,7 +14,8 @@ var Counter = React.createClass({
       <div>
         <div>Count: {this.state.count}</div>
         <div>
-          <input type='button' onClick={this.incrementCount} value='Increment'/></div>
+          <input type='button' onClick={this.incrementCount} value='Increment'/>
+        </div>
       </div>
     );
   }
