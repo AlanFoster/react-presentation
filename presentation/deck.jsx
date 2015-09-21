@@ -6,6 +6,7 @@ import {
 } from "../src/spectacle";
 
 import preloader from "../src/utils/preloader";
+import CodeDemo from './code-demo';
 
 const images = require('./images');
 
@@ -61,17 +62,38 @@ export default class extends React.Component {
           </Appear>
 
           <List textColor="primary">
-            <ListItem><Appear fid="2">Passed in to the component</Appear></ListItem>
+            <ListItem><Appear fid="2">Passed to the component via attributes</Appear></ListItem>
             <ListItem><Appear fid="3">Immutable - The component will not change these values</Appear></ListItem>
             <ListItem><Appear fid="4">Changing props causes a re-render</Appear></ListItem>
           </List>
+        </Slide>
 
-          <Appear fid="5">
-            <CodePane
-              lang="javascript"
-              source={require("raw!./examples/person.example")}
-              margin="20px auto"/>
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <CodeDemo
+            lang="javascript"
+            source={require("raw!./examples/person.example")}
+            margin="20px auto"/>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <Appear fid="1">
+            <Heading textColor="primary" >
+              State
+            </Heading>
           </Appear>
+
+          <List textColor="primary">
+            <ListItem><Appear fid="2">Private - Maintained Internally</Appear></ListItem>
+            <ListItem><Appear fid="3">Mutable - The component <strong>can</strong> change these values</Appear></ListItem>
+            <ListItem><Appear fid="4">Changing state causes a re-render</Appear></ListItem>
+          </List>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <CodeDemo
+            lang="javascript"
+            source={require("raw!./examples/state.example")}
+            margin="20px auto"/>
         </Slide>
       </Deck>
     );
