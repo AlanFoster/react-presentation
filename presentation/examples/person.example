@@ -1,0 +1,14 @@
+var Person = React.createClass({
+    render: function() {
+        return (
+            <div>
+                <div>Name: {this.props.name}</div>
+                <div>Age: {this.props.age}</div>
+            </div>
+        );
+    }
+});
+
+var GordonFreeman = <Person name="Gordon Freeman" age="27" />;
+
+React.render(GordonFreeman, document.getElementById('container'));
