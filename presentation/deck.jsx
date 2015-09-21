@@ -79,6 +79,25 @@ export default class extends React.Component {
         <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
           <Appear>
             <Heading textColor="primary" >
+              Prop Type Validation
+            </Heading>
+          </Appear>
+
+          <Appear>
+            <Text textColor="primary">Creates console warnings</Text>
+          </Appear>
+
+          <Appear>
+            <CodeDemo
+              lang="javascript"
+              source={require("raw!./examples/person-prop-types.example")}
+              margin="20px auto"/>
+          </Appear>
+        </Slide>
+
+          <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <Appear>
+            <Heading textColor="primary" >
               State
             </Heading>
           </Appear>
@@ -171,7 +190,7 @@ export default class extends React.Component {
               <ListItem><Appear>Data Management - Flux</Appear></ListItem>
               <ListItem><Appear>CSS Styling</Appear></ListItem>
               <ListItem><Appear>Testing</Appear></ListItem>
-              <ListItem><Appear>Building</Appear></ListItem>
+              <ListItem><Appear>Build System</Appear></ListItem>
             </List>
           </Appear>
         </Slide>
@@ -258,6 +277,75 @@ export default class extends React.Component {
           </Appear>
         </Slide>
 
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <Appear>
+            <Heading textColor="primary">
+              Style Sheets
+            </Heading>
+          </Appear>
+
+          <Appear>
+            <div>
+              <Text textColor="primary">stylesheets/index.scss</Text>
+              <CodePane
+                lang="scss"
+                source={require("raw!./examples/css-example-scss.example")}
+                margin="20px auto"/>
+            </div>
+          </Appear>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <Heading textColor="primary">
+            Style Sheets
+          </Heading>
+
+          <div>
+            <Text textColor="primary">index.jsx</Text>
+            <CodePane
+              lang="js"
+              source={require("raw!./examples/css-example-component.example")}
+              margin="20px auto"/>
+          </div>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <Appear>
+            <Heading textColor="primary">
+              Testing
+            </Heading>
+          </Appear>
+
+          <Appear>
+            <List>
+              <ListItem><Appear>Test components in isolation</Appear></ListItem>
+              <ListItem><Appear>Jasmine - DSL for writing tests, similar to rspec</Appear></ListItem>
+              <ListItem><Appear>Karma - Runs tests in a <strong>real</strong> browser</Appear></ListItem>
+            </List>
+          </Appear>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <Appear>
+            <div>
+              <Text textColor="primary">tests/index.<u>spec</u>.jsx</Text>
+              <CodePane
+                lang="js"
+                source={require("raw!./examples/testing.example")}
+                margin="20px auto"/>
+            </div>
+          </Appear>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <Appear>
+            <List>
+              <ListItem><Appear>Run all tests once with - npm run test</Appear></ListItem>
+              <ListItem><Appear>Run tests and develop with - npm run testDev</Appear></ListItem>
+              <ListItem><Appear>Run one test in isolation - fdescribe and fit</Appear></ListItem>
+            </List>
+          </Appear>
+        </Slide>
 
         {/*
           TODO:

@@ -3,7 +3,7 @@ import AwesomeWidget from './awesome-widget';
 import Person from './person';
 import OtherPersonWidget from './other-person-widget';
 
-var PersonList = React.createClass({
+const PersonList = React.createClass({
   getInitialState: function () {
     return {
       people: []
@@ -56,7 +56,7 @@ React.render(<PersonList />, document.getElementById('container'));
 
 
 
-var PersonAPI = {
+const PersonAPI = {
   all: function(callback) {
     setTimeout(function() {
       callback([
@@ -67,7 +67,7 @@ var PersonAPI = {
   }
 };
 
-var Person = React.createClass({
+const Person = React.createClass({
   render: function () {
     return (
       <div>
@@ -78,13 +78,13 @@ var Person = React.createClass({
   }
 });
 
-var AwesomeWidget = React.createClass({
+const AwesomeWidget = React.createClass({
   render: function() {
     return <div>Other Person Widget...</div>
   }
 });
 
-var OtherPersonWidget = React.createClass({
+const OtherPersonWidget = React.createClass({
   render: function() {
     return <div>Other Person Widget...</div>
   }
