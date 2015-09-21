@@ -7,6 +7,7 @@ import {
 
 import preloader from "../src/utils/preloader";
 import CodeDemo from './code-demo';
+import { FolderStructure, Folder, File } from './folders';
 
 const images = require('./images');
 
@@ -171,10 +172,92 @@ export default class extends React.Component {
               <ListItem><Appear>CSS Styling</Appear></ListItem>
               <ListItem><Appear>Testing</Appear></ListItem>
               <ListItem><Appear>Building</Appear></ListItem>
-              <ListItem><Appear>Linting</Appear></ListItem>
             </List>
           </Appear>
         </Slide>
+
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <Heading size={1} fit textColor="primary" textFont="secondary">
+            Development
+          </Heading>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <Appear>
+            <Heading textColor="primary">
+              Thinking with React
+            </Heading>
+          </Appear>
+
+          <Appear>
+            <Layout>
+              <Fill>
+                <Appear>
+                  <Text textColor="primary">
+                    Start with a mockup
+                  </Text>
+                  <div>
+                    <Image src={images.reactMockup.replace('/','')} margin="0px auto 40px" />
+                  </div>
+                </Appear>
+              </Fill>
+              <Fill>
+                <Appear>
+                  <Text textColor="primary">
+                    Split into components
+                  </Text>
+                  <div>
+                    <Image src={images.reactMockupSplit.replace('/','')} margin="0px auto 40px" />
+                  </div>
+                </Appear>
+              </Fill>
+            </Layout>
+          </Appear >
+
+            <Appear>
+              <Text textColor="primary">
+                Remember: Pure Components!
+              </Text>
+            </Appear>
+        </Slide>
+
+
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <Appear>
+            <Heading textColor="primary">
+              Folder Structure
+            </Heading>
+          </Appear>
+
+          <Appear>
+            <Heading size={5} textColor="white">
+              Pure Components Structure
+            </Heading>
+          </Appear>
+
+          <Appear>
+            <div>
+              <FolderStructure>
+                <Folder name='component-name'>
+                  <Folder name='tests'>
+                    <File>
+                      index.<u>spec</u>.jsx
+                    </File>
+                  </Folder>
+
+                  <Folder name='stylesheets'>
+                    <File>index.scss</File>
+                  </Folder>
+
+                  <File>
+                    index.jsx
+                  </File>
+                </Folder>
+              </FolderStructure>
+            </div>
+          </Appear>
+        </Slide>
+
 
         {/*
           TODO:
