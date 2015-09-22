@@ -11,6 +11,16 @@ import { FolderStructure, Folder, File } from './folders';
 
 const images = require('./images');
 
+const VisibleLink = React.createClass({
+  render() {
+   return (
+    <div textColor="primary">
+      {this.props.children} - <Link href={this.props.href} style={{color: 'white'}}>{this.props.href}</Link>
+    </div>
+   )
+  }
+});
+
 export default class extends React.Component {
   render() {
     return (
@@ -422,6 +432,24 @@ export default class extends React.Component {
             <ListItem><Appear><span style={{color: 'white'}}>View</span> - Our composite components, dependant on stores</Appear></ListItem>
           </List>
         </Slide>
+
+        <Slide transition={["slide"]} bgImage={images.reactjsLogo.replace("/", "")} bgDarken={0.75}>
+          <Appear>
+            <Heading size={2} textColor="primary">
+              Useful Resources
+            </Heading>
+          </Appear>
+
+          <List textColor="primary">
+            <ListItem><Appear><VisibleLink href="https://facebook.github.io/react/" textColor="white">react</VisibleLink></Appear></ListItem>
+            <ListItem><Appear><VisibleLink href="https://facebook.github.io/flux/docs/overview.html" textColor="white">flux</VisibleLink></Appear></ListItem>
+            <ListItem><Appear><VisibleLink href="https://github.com/addthis/fluxthis" textColor="white">fluxthis</VisibleLink></Appear></ListItem>
+            <ListItem><Appear><VisibleLink href="https://egghead.io/" textColor="white">egghead.io</VisibleLink></Appear></ListItem>
+            <ListItem><Appear><VisibleLink href="http://react.rocks/" textColor="white">React Rocks</VisibleLink></Appear></ListItem>
+            <ListItem><Appear><VisibleLink href="https://www.npmjs.com/" textColor="white">npm</VisibleLink></Appear></ListItem>
+          </List>
+        </Slide>
+
 
         {/*
           TODO:
