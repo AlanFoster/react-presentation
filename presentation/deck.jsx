@@ -31,6 +31,7 @@ export default class extends React.Component {
         <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
           <List>
             <ListItem><Appear>JavaScript framework for front-end Components</Appear></ListItem>
+            <ListItem><Appear>By itself, the V in MVC</Appear></ListItem>
             <ListItem><Appear>Opinionated on Data Flow</Appear></ListItem>
             <ListItem><Appear>Fast - Virtual DOM</Appear></ListItem>
             <ListItem><Appear>Created by Facebook</Appear></ListItem>
@@ -52,7 +53,14 @@ export default class extends React.Component {
         </Slide>
 
         <Slide transition={["slide"]} bgImage={images.reactjsLogo.replace("/", "")} bgDarken={0.75}>
-          <Image src={images.transpiler.replace('/','')} margin="0px auto 40px"/>
+          <Image src={images.transpiler.replace('/','')} margin="0px auto 40px" />
+
+          <CodePane
+            lang="javascript"
+            source={require("raw!./examples/person.example")}
+            margin="20px auto"/>
+
+          <Link href="http://babeljs.io/repl/" textColor="primary">Babel REPL</Link>
         </Slide>
 
         <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
@@ -259,7 +267,7 @@ export default class extends React.Component {
               <FolderStructure>
                 <Folder name='component-name'>
                   <Folder name='tests'>
-                    <File>
+                    <File comment="Naming convention enforced">
                       index.<u>spec</u>.jsx
                     </File>
                   </Folder>
@@ -345,6 +353,74 @@ export default class extends React.Component {
               <ListItem><Appear>Run one test in isolation - fdescribe and fit</Appear></ListItem>
             </List>
           </Appear>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <Appear>
+            <Heading size={2} textColor="primary">
+              Composite Components
+            </Heading>
+          </Appear>
+
+          <Appear>
+            <Heading size={6} textColor="white">
+              Connecting the pieces...
+            </Heading>
+          </Appear>
+
+          <Appear>
+            <div>
+              <FolderStructure>
+                <Folder name='page-name'>
+                  <Folder name='flux' comment="Server Interactions, State management" />
+                  <Folder name='tests' />
+                  <Folder name='stylesheets' />
+
+                  <File comment="The composite object">
+                    page.jsx
+                  </File>
+
+                  <File comment="Inject composite object onto DOM">
+                    index.jsx
+                  </File>
+                </Folder>
+              </FolderStructure>
+            </div>
+          </Appear>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <Appear>
+            <Heading size={2} textColor="primary">
+              Flux
+            </Heading>
+          </Appear>
+
+          <List>
+            <ListItem><Appear>Facebook's <u>pattern</u> for data flow and management - <Link href="https://facebook.github.io/flux/docs/overview.html" textColor="white">docs</Link></Appear></ListItem>
+          </List>
+
+          <Appear>
+            <Image src={images.flux.replace('/','')} margin="0px auto 40px" height="293px"/>
+          </Appear>
+
+          <List>
+            <ListItem><Appear>We use the <Link href="https://github.com/addthis/fluxthis" textColor="white">fluxthis</Link> implementation</Appear></ListItem>
+          </List>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <Appear>
+            <Image src={images.flux.replace('/','')} margin="0px auto 40px" height="220px"/>
+          </Appear>
+
+          <List>
+            <ListItem><Appear><span style={{color: 'white'}}>Action</span> - Event payload; Button Pressed, Server Response, ...</Appear></ListItem>
+            <ListItem><Appear><span style={{color: 'white'}}>Action Creator</span> - Triggers events, interacts with Dispatcher</Appear></ListItem>
+            <ListItem><Appear><span style={{color: 'white'}}>Dispatcher</span> - Registry of Callbacks, triggering events to stores</Appear></ListItem>
+            <ListItem><Appear><span style={{color: 'white'}}>Store</span> - Listens to action events, maintains state</Appear></ListItem>
+            <ListItem><Appear><span style={{color: 'white'}}>View</span> - Our composite components, dependant on stores</Appear></ListItem>
+          </List>
         </Slide>
 
         {/*

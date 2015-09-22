@@ -1,11 +1,23 @@
 import React from 'react';
 import { Text } from "../src/spectacle";
 
+const RenderCommentMixin = {
+  renderComment() {
+    if (!this.props.comment) return null;
+
+    return (
+      <span style={{color: 'white'}}>
+      - {this.props.comment}
+    </span>
+    )
+  }
+};
+
 const FolderStructure = React.createClass({
   render() {
     var style = {
       textAlign: 'left',
-      width: '500px',
+      width: '900px',
       margin: '0 auto'
     };
 
@@ -16,6 +28,8 @@ const FolderStructure = React.createClass({
 });
 
 const Folder = React.createClass({
+  mixins: [RenderCommentMixin],
+
   renderChildren() {
     const style = {
       marginLeft: '50px'
@@ -29,7 +43,7 @@ const Folder = React.createClass({
   render() {
     return (
       <div>
-        <Text textColor="primary">{this.props.name}/</Text>
+        <Text textColor="primary">{this.props.name}/ {this.renderComment()}</Text>
         {this.renderChildren()}
       </div>
     );
@@ -37,10 +51,12 @@ const Folder = React.createClass({
 });
 
 const File = React.createClass({
+  mixins: [RenderCommentMixin],
+
   render() {
     return (
       <Text textColor="primary">
-        - {this.props.children}
+        - {this.props.children} {this.renderComment()}
       </Text>
     );
   }
