@@ -1,0 +1,15 @@
+// BEM Notation
+
+$namespace: custom-component;
+
+.#{$namespace} {
+  font-size: 12px;
+
+  &__child {
+    color: blue;
+
+    &--active {
+      color: red;
+    }
+  }
+}

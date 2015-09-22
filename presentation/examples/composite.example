@@ -1,0 +1,92 @@
+import React from 'react';
+import AwesomeWidget from './awesome-widget';
+import Person from './person';
+import OtherPersonWidget from './other-person-widget';
+
+const PersonList = React.createClass({
+  getInitialState: function () {
+    return {
+      people: []
+    };
+  },
+
+  componentDidMount: function () {
+    PersonAPI.all((people) => this.setState({ people }));
+  },
+
+  renderAllPeople: function() {
+    return this.state.people.map(function(person) {
+      return <Person name={person.name} age={person.age} />
+    });
+  },
+
+  render: function () {
+    return (
+      <div>
+        <AwesomeWidget people={this.state.people} />
+        {this.renderAllPeople()}
+        <OtherPersonWidget people={this.state.people} />
+      </div>
+    );
+  }
+});
+
+React.render(<PersonList />, document.getElementById('container'));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const PersonAPI = {
+  all: function(callback) {
+    setTimeout(function() {
+      callback([
+        { name: 'Gordon Freeman', age: 27 },
+        { name: 'John ', age: 23 }
+      ])
+    }, 200);
+  }
+};
+
+const Person = React.createClass({
+  render: function () {
+    return (
+      <div>
+        <div>Name: {this.props.name}</div>
+        <div>Age: {this.props.age}</div>
+      </div>
+    );
+  }
+});
+
+const AwesomeWidget = React.createClass({
+  render: function() {
+    return <div>Other Person Widget...</div>
+  }
+});
+
+const OtherPersonWidget = React.createClass({
+  render: function() {
+    return <div>Other Person Widget...</div>
+  }
+});
+

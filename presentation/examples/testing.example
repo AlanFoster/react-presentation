@@ -1,0 +1,20 @@
+describe('Custom Component', function () {
+  const React = require('react/addons');
+  const TestUtils = React.addons.TestUtils;
+  // Important - Useful helpers
+  const { textContentFor } = require('test-support/util/react')(React);
+  const CustomComponent = require('components/custom-component');
+
+  beforeEach(function () {
+    var Component = <CustomComponent name='Alan' />;
+
+    // Important - Manages tear down
+    this.component = this.createComponent(Component, TestUtils);
+  });
+
+  describe('when the name alan is passed in', function () {
+    it('renders the provided name', function () {
+      expect(textContentFor(this.component)).toContain('Hello Alan');
+    });
+  });
+});
