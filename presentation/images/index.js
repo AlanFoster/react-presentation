@@ -4,5 +4,6 @@ export default {
   transpiler: require('./transpiler.png'),
   reactMockup: require('./react-mockup.png'),
   reactMockupSplit: require('./react-mockup-split.png'),
-  flux: require('./flux.png')
+  flux: require('./flux.png'),
+  karma: require('./karma-run.png')
 };

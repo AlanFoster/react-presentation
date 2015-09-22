@@ -8,18 +8,9 @@ import {
 import preloader from "../src/utils/preloader";
 import CodeDemo from './code-demo';
 import { FolderStructure, Folder, File } from './folders';
+import VisibleLink from './visible-link';
 
 const images = require('./images');
-
-const VisibleLink = React.createClass({
-  render() {
-   return (
-    <div textColor="primary">
-      {this.props.children} - <Link href={this.props.href} style={{color: 'white'}}>{this.props.href}</Link>
-    </div>
-   )
-  }
-});
 
 export default class extends React.Component {
   render() {
@@ -358,11 +349,22 @@ export default class extends React.Component {
         <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
           <Appear>
             <List>
-              <ListItem><Appear>Run all tests once with - npm run test</Appear></ListItem>
-              <ListItem><Appear>Run tests and develop with - npm run testDev</Appear></ListItem>
-              <ListItem><Appear>Run one test in isolation - fdescribe and fit</Appear></ListItem>
+              <ListItem><Appear>Karma can run all tests once <span style={{color: 'white'}}>singleRun = true</span></Appear></ListItem>
+              <ListItem><Appear>Useful for developing <span style={{color: 'white'}}>singleRun = false, autowatch = true</span></Appear></ListItem>
+              <ListItem><Appear>Running one test in isolation - <span style={{color: 'white'}}>fdescribe, fit</span></Appear></ListItem>
+              <ListItem><Appear>Different reporters available - <span style={{color: 'white'}}>dots, detailed, etc</span></Appear></ListItem>
             </List>
           </Appear>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <Heading size={2} textColor="primary">
+            Reporters
+          </Heading>
+
+          <Text>
+            <Image src={images.karma.replace('/','')} width="1000px" />
+          </Text>
         </Slide>
 
         <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
@@ -449,7 +451,6 @@ export default class extends React.Component {
             <ListItem><Appear><VisibleLink href="https://www.npmjs.com/" textColor="white">npm</VisibleLink></Appear></ListItem>
           </List>
         </Slide>
-
 
         {/*
           TODO:
