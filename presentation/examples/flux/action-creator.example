@@ -1,0 +1,19 @@
+import { ActionCreator } from 'fluxthis';
+
+const TodoActionCreator = new ActionCreator({
+  displayName: 'TodoActionCreator',
+
+  // defines a public method
+  addTodo: {
+    // used by stores to identify an action
+    type: 'ADD_TODO',
+
+    // define what payloads for this action should look like
+    payload: ActionCreator.PayloadTypes.shape({
+      text: ActionCreator.PayloadTypes.string,
+      description: ActionCreator.PayloadTypes.string.isRequired,
+    }).isRequired
+  }
+});
+
+export default TodoActionCreator;

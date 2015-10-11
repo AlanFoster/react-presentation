@@ -1,0 +1,21 @@
+const TodoStore = new ImmutableStore({
+  init() {
+    this.state = Immutable.fromJS({ todos: [] });
+
+    // Listen to actions
+    this.bindActions('ADD_TODO', this.addTodo);
+  },
+
+  // Getters
+  public: {
+    getState() { return this.state; }
+  },
+
+  // Setters
+  private: {
+    addTodo(todo) {
+      var newTodos = this.state.get('todos').concat(Immutable.fromJS(todo));
+      this.state = this.state.set('todos', newTodos);
+    }
+  }
+});

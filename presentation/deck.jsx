@@ -435,6 +435,69 @@ export default class extends React.Component {
           </List>
         </Slide>
 
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <Heading textColor="primary">
+            Example
+          </Heading>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <Heading textColor="primary">
+            Action Creator
+          </Heading>
+
+          <div>
+            <Text textColor="primary">Creates Events, interacts with dispatcher</Text>
+            <CodePane
+              lang="js"
+              source={require("raw!./examples/flux/action-creator.example")}
+              margin="20px auto"/>
+          </div>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <Heading textColor="primary">
+            Usage
+          </Heading>
+
+          <div>
+            <CodePane
+              lang="js"
+              source={require("raw!./examples/flux/action-creator-usage.example")}
+              margin="20px auto"/>
+          </div>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <Heading textColor="primary">
+            Store
+          </Heading>
+
+          <div>
+            <Text textColor="primary">Listens to events, maintains state</Text>
+
+            <CodePane
+              lang="js"
+              source={require("raw!./examples/flux/store.example")}
+              margin="20px auto"/>
+          </div>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <Heading textColor="primary">
+            View
+          </Heading>
+
+          <div>
+            <Text textColor="primary">Listens to Store changes, triggers action creators</Text>
+
+            <CodePane
+              lang="js"
+              source={require("raw!./examples/flux/view.example")}
+              margin="20px auto"/>
+          </div>
+        </Slide>
+
         <Slide transition={["slide"]} bgImage={images.reactjsLogo.replace("/", "")} bgDarken={0.75}>
           <Appear>
             <Heading size={2} textColor="primary">
@@ -454,7 +517,6 @@ export default class extends React.Component {
 
         {/*
           TODO:
-            Prop Types
             Smaller differences, gotchas - class vs className, for htmlFor - https://facebook.github.io/react/docs/tags-and-attributes.html
             ES6 Features -  binding arrow
         */}
