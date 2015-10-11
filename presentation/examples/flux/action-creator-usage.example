@@ -1,0 +1,7 @@
+import TodoActionCreator from 'todo-action-creator';
+
+
+TodoActionCreator.addTodo({
+  text: 'Use fluxthis',
+  description: 'Write a basic '
+});

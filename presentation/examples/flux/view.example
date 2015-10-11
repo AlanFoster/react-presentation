@@ -1,0 +1,15 @@
+const TodoApp = React.createClass({
+  // Listen to store changes
+  mixins: [TodoStore.mixin],
+
+  // Copy state from the store
+  getStateFromStores() {
+    return TodoStore.getState();
+  },
+
+  render() {
+    return (
+      <div>Total todos: {this.state.get('todos').count()}</div>
+    )
+  }
+});
